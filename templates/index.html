@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Guessing Game</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>🎯 Number Guessing Game</h1>
+        <p class="instructions">Guess the magic number between <strong>1</strong> and <strong>100</strong>. Can you crack it?</p>
+
+        <form method="POST" action="/guess" class="guess-form">
+            <label for="guess" class="input-label">Enter your guess:</label>
+            <input type="number" id="guess" name="guess" min="1" max="100" required>
+            <button type="submit" class="submit-btn">Submit Guess</button>
+        </form>
+
+        <p class="message">{{ message }}</p>
+        <div class="attempts-wrapper">
+            <p class="attempts">You have <span>{{ attempts_left }}</span> attempts left.</p>
+        </div>
+    </div>
+</body>
+</html>
+    
